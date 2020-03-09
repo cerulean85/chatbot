@@ -9,16 +9,22 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.zhwan.chatbotserv.databinding.ActivityMainBinding
+import com.zhwan.chatbotserv.databinding.FragmentDashboardBinding
+import com.zhwan.chatbotserv.viewmodel.MainViewModel
+import java.util.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), Observer {
 
-    private lateinit var binding: ActivityMainBinding
+    private val viewModel = MainViewModel()
+    private lateinit var binding: FragmentDashboardBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_main)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-
+        setContentView(R.layout.activity_main)
+        binding = DataBindingUtil. (this, R.layout.fragment_dashboard)
+        binding.vm = viewModel
+        binding.executePendingBindings()
+//        viewModel.add
 
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
@@ -29,5 +35,9 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+    }
+
+    override fun update(o: Observable?, arg: Any?) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }
