@@ -12,7 +12,7 @@ app.use('/user', userRouter);
 // var path = require('path');
 app.use(express.static('public'));
 
-http.createServer(app).listen(app.get('port'), function() {
+http.createServer(app).listen(process.env.PORT || 5000, function() {
 
     console.log('Server listen on port ' + 3000); 
 
