@@ -1,0 +1,18 @@
+
+/* .td_border_style { */
+    /* border: 1px solid blueviolet; */
+/* } */
+
+table.tr_apply_form > tbody > tr > td {
+    border: 1px solid black;
+}
+
+table.tr_apply_form > tbody > tr > td:nth-child(2n+1) {
+    background-color: #17a2b8;
+    color: white;
+    text-align: center;
+    width: 200px;
+}
+
+
+/* th:nth-child(2n+1), td:nth-child(2n+1) {} */

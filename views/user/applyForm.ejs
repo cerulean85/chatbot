@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="/js/bootstrap/bootstrap.js"></script>
+
+  <link href="/css/apply_form.css" rel="stylesheet" type="text/css">
+  <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+  <script type="text/javascript" src="/js/apply.js"></script>
+
+  <script>
+
+$(document).ready(function() {
+    $('#ajaxTest').click(function(){
+      getApplicationRequestList();
+    });
+});
+
+
+  </script>
+  <style>
+
+  </style>
+
+
+</head>
+<body>
+  <!-- 버튼 스타일: https://tworab.tistory.com/72?category=689942 -->
+  <div>
+    <button id="ajaxTest" type="button" class="btn btn-default btn-lg">AJAX TEST</button>
+    <button type="button" class="btn btn-primary btn-lg">기본버튼!!</button>
+    <button type="button" class="btn btn-success btn-lg">기본버튼!!</button>
+    <button type="button" class="btn btn-warning btn-lg">기본버튼!!</button>
+    <button type="button" class="btn btn-info btn-lg">기본버튼!!</button>
+    <button type="button" class="btn btn-danger btn-lg">기본버튼!!</button>
+  </div>
+
+  <div>
+    <button type="button" class="btn btn-default btn-sm">기본버튼!!</button>
+    <button type="button" class="btn btn-primary btn-sm">기본버튼!!</button>
+    <button type="button" class="btn btn-success btn-sm">기본버튼!!</button>
+    <button type="button" class="btn btn-warning btn-sm">기본버튼!!</button>
+    <button type="button" class="btn btn-info btn-sm">기본버튼!!</button>
+    <button type="button" class="btn btn-danger btn-sm">기본버튼!!</button>
+  </div>
+
+  <div>
+    <button type="button" class="btn btn-default btn-xs">기본버튼!!</button>
+    <button type="button" class="btn btn-primary btn-xs">기본버튼!!</button>
+    <button type="button" class="btn btn-success btn-xs">기본버튼!!</button>
+    <button type="button" class="btn btn-warning btn-xs">기본버튼!!</button>
+    <button type="button" class="btn btn-info btn-xs">기본버튼!!</button>
+    <button type="button" class="btn btn-danger btn-xs">기본버튼!!</button>
+  </div>
+
+  <div>
+    <button type="button" class="btn btn-default">기본버튼!!</button>
+    <button type="button" class="btn btn-primary">기본버튼!!</button>
+    <button type="button" class="btn btn-success">기본버튼!!</button>
+    <button type="button" class="btn btn-warning">기본버튼!!</button>
+    <button type="button" class="btn btn-info">기본버튼!!</button>
+    <button type="button" class="btn btn-danger">기본버튼!!</button>
+  </div>
+
+
+  <!-- 게시판 태그: https://tworab.tistory.com/79?category=689942 -->
+  <table class="table tr_apply_form">
+    <thead>
+      <th colspan="4" style="border: 0px;">ㅁ 훈련기관정보</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>훈련기관명</td>
+        <td><input type="text" /></td>
+        <td>훈련기관소재지</td>
+        <td><input type="text" /></td>
+      </tr>
+      <tr>
+        <td>훈련기관소재지</td>
+        <td colspan="3"><input type="text" /></td>
+      </tr>
+      <tr>
+        <td>담당자명</td>
+        <td><input type="text" /></td>
+        <td>담당자직책</td>
+        <td><input type="text" /></td>
+      </tr>
+      <tr>
+        <td>이메일</td>
+        <td><input type="text" /></td>
+        <td>연락처</td>
+        <td><input type="text" /></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table tr_apply_form">
+    <thead>
+      <th colspan="4" style="border: 0px;">ㅁ 신청과정정보</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>주훈련대상</td>
+        <td colspan="3"><input type="checkbox">ㅋㅋㅋ</input></td>
+      </tr>
+      <tr>
+        <td colspan="4" style="border: 0px; background-color: white;">
+
+          <button type="button" class="btn btn-danger btn-xs" style="width: 500px;">+ 훈련과정 추가하기</button>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table tr_apply_form">
+    <thead>
+      <th colspan="4" style="border: 0px;">ㅁ 컨설팅내용</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>컨설팅방법</td>
+        <td><input type="text" /></td>
+        <td>희망일자</td>
+        <td><input type="text" /></td>
+      </tr>
+      <tr>
+        <td>컨설팅요청분야</td>
+        <td colspan="3"><input type="text" /></td>
+      </tr>
+      <tr>
+        <td>세부내용</td>
+        <td colspan="3"><input type="text" /></td>
+      </tr>
+      <tr>
+        <td>첨부파일</td>
+        <td colspan="3"><input type="text" /></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-center"> 
+    <button type="button" class="btn btn-success btn-lg">제출하기</button>
+    <button type="button" class="btn btn-warning btn-lg">다시쓰기</button>
+  </div>
+
+
+  <table class="table table-striped">
+
+    <thead>
+      <th colspan="4" style="border: 0px;">ㅁ 컨설팅 신청현황</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>165</td>
+        <td>지금 이 순간</td>
+        <td>조현우</td>
+        <td>2016.12.02</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>165</td>
+        <td>지금 이 순간</td>
+        <td>조현우</td>
+        <td>2016.12.02</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>165</td>
+        <td>지금 이 순간</td>
+        <td>조현우</td>
+        <td>2016.12.02</td>
+        <td>2</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+  <!-- <div style="width:200px; height:300px;" class="test">ㅋㅋㅋㅋ</div> -->
+  <!-- <button type="button" class="btn">기본버튼!!</button> -->
+  <!-- <p>js data : <%=data%></p> -->
+
+
+
+
+
+
+
+</body>
+
+
+</html>
